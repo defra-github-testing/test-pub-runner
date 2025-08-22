@@ -35,6 +35,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    if: github.event.pull_request.head.repo.full_name == github.repository || github.event_name != 'pull_request'
     # The type of runner that the job will run on
     runs-on: self-hosted
 
